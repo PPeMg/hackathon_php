@@ -54,8 +54,14 @@ class PatientModel extends CI_Model
         }
     }
 
-    public function deletePatient($id)
+    public function deletePatient($id = NULL)
     {
+        if(!empty($id)){
+            $this->db->delete('pacientes', array('IDENTIFICADOR' => $id));
+            return array(TRUE);
+        } else {
+            return array(FALSE);
+        }
 
     }
 }

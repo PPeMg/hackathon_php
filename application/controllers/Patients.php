@@ -38,7 +38,10 @@ class Patients extends CI_Controller
 
     public function deletePatient()
     {
-
+        $result = $this->PatientModel->deletePatient($this->input->post('id'));
+        //if($result){
+            redirect('/Patients', 'refresh');
+        //}
     }
 
     public function index() {

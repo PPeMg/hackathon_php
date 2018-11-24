@@ -95,6 +95,33 @@
     </div>
 </div>
 
+
+<div class="modal fade" id="modalDeletePatient" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header text-center">
+                <h4 class="modal-title w-100 font-weight-bold">Delete Patient</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body mx-3">
+                <h4>Are you sure you want delete the patient?</h4>
+            </div>
+            <form method="post" action="<?= site_url('/Patients/deletePatient') ?>"  >
+                <input type="hidden" id="id" name="id" class="form-control">
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-danger" type="submit">Delete Patient</button>
+                </div>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="container">
 	<div class="row">
 		<div class="col-12">

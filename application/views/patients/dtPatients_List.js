@@ -31,7 +31,7 @@
                         	    <button id="PE_${patient.IDENTIFICADOR}" type="button" class="btn btn-secondary btn-sm editBtn" data-toggle="modal" data-target="#modalEditPatient">
                         	        <i class="fa fa-edit"></i>
                                 </button>
-                        	    <button id="PD_${patient.IDENTIFICADOR}" type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalAddPatient">
+                        	    <button id="PD_${patient.IDENTIFICADOR}" type="button" class="btn btn-danger btn-sm deleteBtn" data-toggle="modal" data-target="#modalDeletePatient">
                         	        <i class="fa fa-trash"></i>
                                 </button>
                             </div>
@@ -47,7 +47,9 @@
 
 
     $("body").on("click", ".editBtn", function(){
-        console.log("BOTON DEL ID = " + $(this).attr("id").split("_")[1]);
         $("#modalEditPatient #id").val($(this).attr("id").split("_")[1]);
+    });
+    $("body").on("click", ".deleteBtn", function(){
+        $("#modalDeletePatient #id").val($(this).attr("id").split("_")[1]);
     });
 </script>
