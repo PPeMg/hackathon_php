@@ -11,11 +11,17 @@ class MonitorModel extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        $this->load->database();
     }
 
     public function getMonitorList($parameters = array())
     {
-
+        $result = $this->db->select('*')
+            ->get('monitores')
+            ->result();
+        var_dump($result);
+        die();
+        return $result;
     }
 
     public function addMonitor($parameters = array())
