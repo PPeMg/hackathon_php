@@ -19,7 +19,8 @@ class Home extends CI_Controller
         $data['custom_css'] = '';
         $this->load->view('header_view', $data);
         $data['custom_js'] = $this->load->view('home/home_view_js', $data, TRUE);
+
         $this->load->view('footer_view', $data);
-        $this->load->view('home/home_view');
+        $this->load->view('home/home_view', $data);
     }
 }

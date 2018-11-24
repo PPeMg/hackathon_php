@@ -13,7 +13,9 @@
     <!-- Bootstrap core CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
     <!-- Material Design Bootstrap -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.14/css/mdb.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <?= $custom_css ?>
 </head>
 <body>
@@ -21,7 +23,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark primary-color">
 
     <!-- Navbar brand -->
-    <a class="navbar-brand" href="#">Navbar</a>
+    <a class="navbar-brand" href="#">Granada Medical Friend</a>
 
     <!-- Collapse button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
@@ -40,10 +42,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Features</a>
+                <a class="nav-link" href="<?=site_url('/Monitors')?>">Nuestros monitores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Pricing</a>
+                <a class="nav-link" href="#">Nuestras actividades</a>
             </li>
 
             <!-- Dropdown -->

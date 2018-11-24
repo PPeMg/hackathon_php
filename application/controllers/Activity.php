@@ -13,6 +13,12 @@ class Activity extends CI_Controller
         parent::__construct();
     }
 
+    public function index()
+    {
+        $data = array();
+
+    }
+
     public function getActivityList()
     {
 
@@ -30,6 +36,17 @@ class Activity extends CI_Controller
 
     public function deletePatient()
     {
+
+    }
+
+    public function add()
+    {
+        $data = array();
+        $data['custom_css'] = '';
+        $this->load->view('header_view', $data);
+        $data['custom_js'] = $this->load->view('home/home_view_js', $data, TRUE);
+        $this->load->view('footer_view', $data);
+        $this->load->view('home/home_view');
 
     }
 }
