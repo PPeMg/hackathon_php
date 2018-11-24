@@ -45,7 +45,7 @@
                 <a class="nav-link" href="<?=site_url('/Monitors')?>">Nuestros monitores</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Nuestras actividades</a>
+                <a class="nav-link" href="<?=site_url('/Activity')?>">Nuestras actividades</a>
             </li>
 
             <!-- Dropdown -->
