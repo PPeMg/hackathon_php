@@ -34,7 +34,8 @@ class Monitors extends CI_Controller
 
     public function addMonitor()
     {
-
+        $result = $this->MonitorModel->addMonitor($this->input->post());
+        echo json_encode($result);
     }
 
     public function updateMonitor()
@@ -45,5 +46,15 @@ class Monitors extends CI_Controller
     public function deleteMonitor()
     {
 
+    }
+
+    public function add()
+    {
+        $data = array();
+        $data['custom_css'] = '';
+        $data['custom_js'] = '';
+        $this->load->view('footer_view', $data);
+        $this->load->view('header_view', $data);
+        $this->load->view('monitors/monitors_add', $data);
     }
 }

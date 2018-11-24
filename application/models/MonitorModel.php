@@ -19,14 +19,21 @@ class MonitorModel extends CI_Model
         $result = $this->db->select('*')
             ->get('monitores')
             ->result();
-        var_dump($result);
-        die();
         return $result;
     }
 
     public function addMonitor($parameters = array())
     {
+        $fieldsToInsert = array(
+            'DNI' => !empty($parameters['DNI']) ? $parameters['DNI'] : '',
+            'NOMBRE' => !empty($parameters['DNI']) ? $parameters['NOMBRE'] : '',
+            'APELLIDOS' => !empty($parameters['DNI']) ? $parameters['APELLIDOS'] : '',
+            'TELEFONO' => !empty($parameters['DNI']) ? $parameters['TELEFONO'] : 0,
+            'EMAIL' => !empty($parameters['DNI']) ? $parameters['EMAIL'] : '',
+        );
+        $this->db->insert('monitores', $fieldsToInsert);
 
+        return array(TRUE);
     }
 
     public function updateMonitor($parameters = array())
