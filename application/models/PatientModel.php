@@ -11,11 +11,16 @@ class PatientModel extends CI_Model
     public function __construct()
     {
         parent::__construct();
+        $this->load->database();
     }
 
     public function getPatientList($parameters = array())
     {
 
+        $result = $this->db->select('*')
+            ->get('pacientes')
+            ->result();     
+        return $result;
     }
 
     public function addPatient($parameters = array())
