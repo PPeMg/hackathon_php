@@ -18,10 +18,10 @@ class Activity extends CI_Controller
     {
         $data = array();
         $data['custom_css'] = '';
-        $data['custom_js'] = $this->load->view('activities/activities_view_js', $data, TRUE);
-        $this->load->view('footer_view', $data);
         $this->load->view('header_view', $data);
         $this->load->view('activities/activities_view', $data);
+        $data['custom_js'] = $this->load->view('activities/activities_view_js', $data, TRUE);
+        $this->load->view('footer_view', $data);
 
     }
 

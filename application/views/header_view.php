@@ -42,13 +42,16 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?=site_url('/Monitors')?>">Nuestros monitores</a>
+                <a class="nav-link" href="<?=site_url('/Patients')?>">Patients</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="<?=site_url('/Activity')?>">Nuestras actividades</a>
+                <a class="nav-link" href="<?=site_url('/Monitors')?>">Monitores</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="<?=site_url('/Activity')?>">Actividades</a>
             </li>
 
-            <!-- Dropdown -->
+            <!-- Dropdown -- >
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                    aria-haspopup="true"
@@ -60,14 +63,15 @@
                 </div>
             </li>
 
-        </ul>
         <!-- Links -->
-
+        </ul>
+              <!--
         <form class="form-inline">
             <div class="md-form my-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
             </div>
         </form>
+        -->
     </div>
     <!-- Collapsible content -->
 
