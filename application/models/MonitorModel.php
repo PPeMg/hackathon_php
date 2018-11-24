@@ -50,8 +50,9 @@ class MonitorModel extends CI_Model
         return array(TRUE);
     }
 
-    public function deleteMonitor($id)
+    public function deleteMonitor($id = NULL)
     {
-
+        $this->db->delete('monitores', array('IDENTIFICADOR' => (int)$id));
+        return array(TRUE);
     }
 }

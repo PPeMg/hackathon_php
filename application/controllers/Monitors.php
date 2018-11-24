@@ -35,7 +35,7 @@ class Monitors extends CI_Controller
     public function addMonitor()
     {
         $result = $this->MonitorModel->addMonitor($this->input->post());
-        echo json_encode($result);
+        redirect('/Monitors');
     }
 
     public function updateMonitor()
@@ -48,7 +48,9 @@ class Monitors extends CI_Controller
 
     public function deleteMonitor()
     {
-
+        $id = $this->input->post('IDENTIFICADOR');
+        $this->MonitorModel->deleteMonitor($id);
+        redirect('/Monitors');
     }
 
     public function add()
