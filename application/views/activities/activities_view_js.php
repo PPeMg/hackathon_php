@@ -10,6 +10,7 @@
     const siteUrlEdit = "<?=site_url('/Activity/edit')?>";
     const urlGetActivity = "<?=site_url('/Activity/getActivityList')?>";
     const urlDeleteActivity = "<?=site_url('/Monitors/deleteMonitor')?>";
+
     function editActivity(id) {
         $.ajax({
             url: urlGetActivity,
@@ -17,7 +18,12 @@
             data: {IDENTIFICADOR: id}
         })
             .done(function (activities) {
-                console.log(activities)
+                activity = JSON.parse(activities)[0]
+                $('#materialRegisterFormEmail').val(activity.TITULO)
+                $('#materialRegisterFormEmail2').val(activity.DESCRIPCION)
+                $('#materialRegisterFormPassword').val(activity.NUM_PLAZAS)
+                $('#materialRegisterFormEmail3').val(activity.FECHA)
+                $('#iden').val(activity.IDENTIFICADOR)
             })
     }
 </script>

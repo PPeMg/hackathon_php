@@ -39,7 +39,21 @@ class ActivityModel extends CI_Model
 
     public function updateActivity($parameters = array())
     {
+        if (!empty($parameters['IDENTIFICADOR'])) {
 
+            $fieldsToUpdate = array(
+                'TITULO' => !empty($parameters['TITULO']) ? $parameters['TITULO'] : '',
+                'DESCRIPCION' => !empty($parameters['DESCRIPCION']) ? $parameters['DESCRIPCION'] : '',
+                'NUM_PLAZAS' => !empty($parameters['NUM_PLAZAS']) ? $parameters['NUM_PLAZAS'] : '',
+                'FECHA' => !empty($parameters['FECHA']) ? $parameters['FECHA'] : '',
+                'HORA' => '',
+            );
+            $this->db->update('actividades', $fieldsToUpdate, array('IDENTIFICADOR' => $parameters['IDENTIFICADOR']));
+            return array(TRUE);
+
+        }
+        else
+            return array(FALSE);
     }
 
     public function deleteActivity($parameters = array())

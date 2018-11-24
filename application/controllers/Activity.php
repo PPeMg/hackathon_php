@@ -39,7 +39,11 @@ class Activity extends CI_Controller
 
     public function updateActivity()
     {
-
+        $result = $this->ActivityModel->updateActivity($this->input->post());
+        if ($result == TRUE)
+            redirect('/Activity');
+        else
+            die('FALLÓ');
     }
 
     public function deleteActivity()

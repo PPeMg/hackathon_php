@@ -17,12 +17,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header text-center">
-                <h4 class="modal-title w-100 font-weight-bold">Add Patient</h4>
+                <h4 class="modal-title w-100 font-weight-bold">Editar Actividad</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <form method="post" action="<?= site_url('/Activity/updateActivity') ?>"  >
+                <input type="hidden" id="iden" name="IDENTIFICADOR" >
                 <div class="modal-body mx-3">
                     <div class="md-form mb-5">
                         <i class="fa fa-id-card prefix grey-text"></i>
@@ -31,7 +32,7 @@
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-user prefix grey-text"></i>
-                        <input name="DESCRIPCION" type="text" id="materialRegisterFormEmail" class="form-control">
+                        <input name="DESCRIPCION" type="text" id="materialRegisterFormEmail2" class="form-control">
                         <label for="materialRegisterFormEmail">DESCRIPCION</label>
                     </div>
                     <div class="md-form mb-5">
@@ -42,7 +43,7 @@
                     </div>
                     <div class="md-form mb-5">
                         <i class="fa fa-envelope prefix grey-text"></i>
-                        <input name="FECHA" type="date" id="materialRegisterFormEmail" class="form-control">
+                        <input name="FECHA" type="date" id="materialRegisterFormEmail3" class="form-control">
                         <label for="materialRegisterFormEmail">FECHA</label>
                     </div>
 
