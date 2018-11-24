@@ -19,7 +19,6 @@
             data: {IDENTIFICADOR: id}
         })
             .done(function (result) {
-                if (result[0] == 'true')
                     window.location = siteUrlThis
             })
     }

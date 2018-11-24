@@ -56,8 +56,9 @@ class ActivityModel extends CI_Model
             return array(FALSE);
     }
 
-    public function deleteActivity($parameters = array())
+    public function deleteActivity($id)
     {
-
+        $this->db->delete('monitores_actividades', array('ACTIVIDAD' => $id));
+        $this->db->delete('actividades', array('IDENTIFICADOR' => $id));
     }
 }

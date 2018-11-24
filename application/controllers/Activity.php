@@ -48,7 +48,9 @@ class Activity extends CI_Controller
 
     public function deleteActivity()
     {
-
+        $id = $this->input->post('IDENTIFICADOR');
+        $result = $this->ActivityModel->deleteActivity($id);
+        redirect('/Activity');
     }
 
     public function add()

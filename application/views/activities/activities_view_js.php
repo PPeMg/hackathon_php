@@ -9,7 +9,7 @@
     const siteUrlThis = "<?=site_url('/Activity')?>";
     const siteUrlEdit = "<?=site_url('/Activity/edit')?>";
     const urlGetActivity = "<?=site_url('/Activity/getActivityList')?>";
-    const urlDeleteActivity = "<?=site_url('/Monitors/deleteMonitor')?>";
+    const urlDeleteActivity = "<?=site_url('/Activity/deleteActivity')?>";
 
     function editActivity(id) {
         $.ajax({
@@ -25,6 +25,15 @@
                 $('#materialRegisterFormEmail3').val(activity.FECHA)
                 $('#iden').val(activity.IDENTIFICADOR)
             })
+    }
+    function deleteActivity(id) {
+        $.ajax({
+            url: urlDeleteActivity,
+            type: "POST",
+            data: {IDENTIFICADOR: id}
+        }).done(function () {
+            window.location = siteUrlThis
+        })
     }
 </script>
 <script>
