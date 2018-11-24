@@ -39,7 +39,15 @@ class MonitorModel extends CI_Model
 
     public function updateMonitor($parameters = array())
     {
-
+        $fieldsToUpdate = array(
+            'DNI' => !empty($parameters['DNI']) ? $parameters['DNI'] : '',
+            'NOMBRE' => !empty($parameters['NOMBRE']) ? $parameters['NOMBRE'] : '',
+            'APELLIDOS' => !empty($parameters['APELLIDOS']) ? $parameters['APELLIDOS'] : '',
+            'TELEFONO' => !empty($parameters['TELEFONO']) ? $parameters['TELEFONO'] : 0,
+            'EMAIL' => !empty($parameters['EMAIL']) ? $parameters['EMAIL'] : '',
+        );
+        $this->db->update('monitores', $fieldsToUpdate, array('IDENTIFICADOR' => $parameters['IDENTIFICADOR']));
+        return array(TRUE);
     }
 
     public function deleteMonitor($id)

@@ -40,7 +40,9 @@ class Monitors extends CI_Controller
 
     public function updateMonitor()
     {
-        $result = $this->MonitorModel->updateMonitor
+        $result = $this->MonitorModel->updateMonitor($this->input->post());
+        if ($result[0])
+            redirect('/Monitors');
 
     }
 
