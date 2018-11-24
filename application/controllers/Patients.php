@@ -22,7 +22,10 @@ class Patients extends CI_Controller
 
     public function addPatient()
     {
-
+        $result = $this->PatientModel->addPatient($this->input->post());
+        //if($result){
+            redirect('/Patients', 'refresh');
+        //}
     }
 
     public function updatePatient()
@@ -39,9 +42,10 @@ class Patients extends CI_Controller
         $data = array();
         $data['custom_css'] = '';
         $data['custom_js'] = '';
+
         $this->load->view('header_view', $data);
         $this->load->view('patients/patients_list_view', $data);
-        $this->load->view('patients/dtPatients_List.js', $data, TRUE);
+        $data['custom_js'] = $this->load->view('patients/dtPatients_List.js', $data, TRUE);
         $this->load->view('footer_view', $data);
     }
 }
