@@ -30,7 +30,10 @@ class Patients extends CI_Controller
 
     public function updatePatient()
     {
-
+        $result = $this->PatientModel->updatePatient($this->input->post());
+        //if($result){
+            redirect('/Patients', 'refresh');
+        //}
     }
 
     public function deletePatient()

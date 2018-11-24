@@ -39,7 +39,19 @@ class PatientModel extends CI_Model
 
     public function updatePatient($parameters = array())
     {
-
+        if(!empty($parameters['id'])){
+            $fieldsToInsert = array(
+                'DNI' => !empty($parameters['dni']) ? $parameters['dni'] : '',
+                'NOMBRE' => !empty($parameters['name']) ? $parameters['name'] : '',
+                'APELLIDOS' => !empty($parameters['lastName']) ? $parameters['lastName'] : '',
+                'TELEFONO' => !empty($parameters['email']) ? $parameters['email'] : 0,
+                'EMAIL' => !empty($parameters['telephone']) ? $parameters['telephone'] : '',
+            );
+            $this->db->update('pacientes', $fieldsToInsert, array('IDENTIFICADOR' => $parameters['id']));
+            return array(TRUE);
+        } else {
+            return array(FALSE);
+        }
     }
 
     public function deletePatient($id)
