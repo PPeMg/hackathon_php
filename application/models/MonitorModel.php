@@ -16,8 +16,9 @@ class MonitorModel extends CI_Model
 
     public function getMonitorList($parameters = array())
     {
-        $result = $this->db->select('*')
-            ->get('monitores')
+        $this->db->select('*');
+        isset($parameters['IDENTIFICADOR']) ? $this->db->where('IDENTIFICADOR', $parameters['IDENTIFICADOR']) : NULL;
+        $result = $this->db->get('monitores')
             ->result();
         return $result;
     }
@@ -26,10 +27,10 @@ class MonitorModel extends CI_Model
     {
         $fieldsToInsert = array(
             'DNI' => !empty($parameters['DNI']) ? $parameters['DNI'] : '',
-            'NOMBRE' => !empty($parameters['DNI']) ? $parameters['NOMBRE'] : '',
-            'APELLIDOS' => !empty($parameters['DNI']) ? $parameters['APELLIDOS'] : '',
-            'TELEFONO' => !empty($parameters['DNI']) ? $parameters['TELEFONO'] : 0,
-            'EMAIL' => !empty($parameters['DNI']) ? $parameters['EMAIL'] : '',
+            'NOMBRE' => !empty($parameters['NOMBRE']) ? $parameters['NOMBRE'] : '',
+            'APELLIDOS' => !empty($parameters['APELLIDOS']) ? $parameters['APELLIDOS'] : '',
+            'TELEFONO' => !empty($parameters['TELEFONO']) ? $parameters['TELEFONO'] : 0,
+            'EMAIL' => !empty($parameters['EMAIL']) ? $parameters['EMAIL'] : '',
         );
         $this->db->insert('monitores', $fieldsToInsert);
 

@@ -7,6 +7,7 @@
  */ ?>
 
 <script>
+    const siteUrlEdit = "<?=site_url('/Monitors/edit')?>";
     const urlGetMonitors = "<?=site_url('/Monitors/getMonitorsList')?>";
     $.ajax({
         url: urlGetMonitors,
@@ -14,11 +15,12 @@
         data: {}
     })
         .done(function (monitors) {
-            if (monitors.length === 0) {
+
+            if (JSON.parse(monitors).length === 0) {
                 $('.noResult').show()
             } else {
                 $('.waitingResult').hide();
-                $.each(monitors, function (index, monitor) {
+                $(JSON.parse(monitors)).each(function (index, monitor) {
                     var html = `<tr>
                         <td>${monitor.IDENTIFICADOR}</td>
                         <td>${monitor.NOMBRE}</td>
@@ -26,6 +28,9 @@
                         <td>${monitor.DNI}</td>
                         <td>${monitor.TELEFONO}</td>
                         <td>${monitor.EMAIL}</td>
+                        <td><a href="${siteUrlEdit}/${monitor.IDENTIFICADOR}"  data-id="${monitor.IDENTIFICADOR}" class="btn-floating btn-lg purple-gradient"><i class="fa fa-edit"></i></a>
+                        <a onclick="javascript:delete(${monitor.IDENTIFICADOR})" data-id="${monitor.IDENTIFICADOR}" class="btn-floating btn-lg purple-gradient"><i class="fa fa-trash"></i></a>
+                        </td>
                     `
                     $('tbody').append(html)
                 })
@@ -34,4 +39,8 @@
         .fail(function (err) {
             $('.noResult').show()
         })
+
+    function edit(id) {
+
+    }
 </script>

@@ -26,6 +26,9 @@
         </th>
         <th class="th-sm">EMAIL
         </th>
+        <th class="th-sm">
+            Acciones
+        </th>
     </tr>
     </thead>
     <tbody>

@@ -40,6 +40,7 @@ class Monitors extends CI_Controller
 
     public function updateMonitor()
     {
+        $result = $this->MonitorModel->updateMonitor
 
     }
 
@@ -56,5 +57,20 @@ class Monitors extends CI_Controller
         $this->load->view('footer_view', $data);
         $this->load->view('header_view', $data);
         $this->load->view('monitors/monitors_add', $data);
+    }
+
+    public function edit($id = NULL)
+    {
+
+        $parameters = array();
+        $parameters['IDENTIFICADOR'] = $id;
+        $monitor = $this->MonitorModel->getMonitorList($parameters);
+        $data = array();
+        $data['custom_css'] = '';
+        $data['custom_js'] = '';
+        $data['monitor'] = $monitor[0];
+        $this->load->view('footer_view', $data);
+        $this->load->view('header_view', $data);
+        $this->load->view('monitors/monitors_edit', $data);
     }
 }
